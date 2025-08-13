@@ -26,7 +26,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -61,7 +62,11 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				'neural-grid': 'hsl(var(--neural-grid))',
+				'memory-block': 'hsl(var(--memory-block))',
+				'agent-active': 'hsl(var(--agent-active))',
+				'tool-accent': 'hsl(var(--tool-accent))'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
