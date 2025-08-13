@@ -200,7 +200,7 @@ export function ChatInterface({ agentId, agentName, messages, onSendMessage, isL
             <Button 
               type="submit" 
               disabled={isLoading || !inputValue.trim()}
-              variant="neural"
+              variant="default"
             >
               <Send className="h-4 w-4" />
             </Button>

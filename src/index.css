@@ -6,60 +6,60 @@
 
 @layer base {
   :root {
-    /* Core Brand Colors */
-    --background: 220 24% 6%;
-    --foreground: 220 8% 95%;
+    /* Minimalistic Black & White Color System */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 5%;
 
-    --card: 220 20% 8%;
-    --card-foreground: 220 8% 95%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 10%;
 
-    --popover: 220 20% 8%;
-    --popover-foreground: 220 8% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 5%;
 
-    /* Primary - Letta Purple */
-    --primary: 264 83% 58%;
-    --primary-foreground: 220 8% 95%;
-    --primary-glow: 264 83% 68%;
+    /* Primary - Pure Black */
+    --primary: 0 0% 5%;
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 0 0% 15%;
 
-    /* Secondary - Neural Blue */
-    --secondary: 217 32% 17%;
-    --secondary-foreground: 220 8% 95%;
+    /* Secondary - Light Gray */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 220 16% 12%;
-    --muted-foreground: 220 8% 65%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Accent - AI Cyan */
-    --accent: 191 74% 42%;
-    --accent-foreground: 220 24% 6%;
+    /* Accent - Dark Gray */
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 220 8% 95%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 16% 16%;
-    --input: 220 16% 16%;
-    --ring: 264 83% 58%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 20%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Letta-specific Design Tokens */
-    --neural-grid: 220 16% 12%;
-    --memory-block: 264 83% 58%;
-    --agent-active: 142 76% 36%;
-    --tool-accent: 38 92% 50%;
+    /* Minimalistic Design Tokens */
+    --neural-grid: 0 0% 95%;
+    --memory-block: 0 0% 10%;
+    --agent-active: 0 0% 15%;
+    --tool-accent: 0 0% 25%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(264 83% 58%), hsl(191 74% 42%));
-    --gradient-neural: linear-gradient(180deg, hsl(220 24% 6%), hsl(220 20% 8%));
-    --gradient-glow: radial-gradient(circle at center, hsl(264 83% 58% / 0.15), transparent 70%);
+    /* Subtle Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 5%), hsl(0 0% 15%));
+    --gradient-neural: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-glow: radial-gradient(circle at center, hsl(0 0% 10% / 0.05), transparent 70%);
     
-    /* Shadows */
-    --shadow-neural: 0 8px 32px hsl(264 83% 58% / 0.12);
-    --shadow-glow: 0 0 40px hsl(264 83% 58% / 0.3);
-    --shadow-card: 0 4px 24px hsl(220 24% 6% / 0.4);
+    /* Subtle Shadows */
+    --shadow-neural: 0 2px 8px hsl(0 0% 0% / 0.04);
+    --shadow-glow: 0 0 20px hsl(0 0% 0% / 0.1);
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.05);
 
-    /* Animations */
-    --transition-neural: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-glow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Clean Animations */
+    --transition-neural: all 0.2s ease;
+    --transition-glow: all 0.3s ease;
 
     --sidebar-background: 0 0% 98%;
 
@@ -78,47 +78,47 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .light {
-    --background: 220 16% 96%;
-    --foreground: 220 24% 6%;
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 220 24% 6%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 24% 6%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 264 83% 58%;
-    --primary-foreground: 220 8% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 5%;
 
-    --secondary: 220 8% 90%;
-    --secondary-foreground: 220 24% 6%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 95%;
 
-    --muted: 220 8% 92%;
-    --muted-foreground: 220 8% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 191 74% 42%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 0 0% 80%;
+    --accent-foreground: 0 0% 5%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 95%;
 
-    --border: 220 8% 88%;
-    --input: 220 8% 88%;
-    --ring: 264 83% 58%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 80%;
 
-    --neural-grid: 220 8% 92%;
-    --memory-block: 264 83% 58%;
-    --agent-active: 142 76% 36%;
-    --tool-accent: 38 92% 50%;
+    --neural-grid: 0 0% 12%;
+    --memory-block: 0 0% 90%;
+    --agent-active: 0 0% 85%;
+    --tool-accent: 0 0% 75%;
 
-    --gradient-primary: linear-gradient(135deg, hsl(264 83% 58%), hsl(191 74% 42%));
-    --gradient-neural: linear-gradient(180deg, hsl(220 16% 96%), hsl(0 0% 100%));
-    --gradient-glow: radial-gradient(circle at center, hsl(264 83% 58% / 0.08), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 95%), hsl(0 0% 85%));
+    --gradient-neural: linear-gradient(180deg, hsl(0 0% 5%), hsl(0 0% 8%));
+    --gradient-glow: radial-gradient(circle at center, hsl(0 0% 90% / 0.05), transparent 70%);
 
-    --shadow-neural: 0 8px 32px hsl(264 83% 58% / 0.08);
-    --shadow-glow: 0 0 40px hsl(264 83% 58% / 0.2);
-    --shadow-card: 0 4px 24px hsl(220 24% 6% / 0.1);
+    --shadow-neural: 0 2px 8px hsl(0 0% 0% / 0.2);
+    --shadow-glow: 0 0 20px hsl(0 0% 100% / 0.1);
+    --shadow-card: 0 1px 3px hsl(0 0% 0% / 0.2);
   }
 }
 

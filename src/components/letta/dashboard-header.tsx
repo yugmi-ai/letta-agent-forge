@@ -50,7 +50,7 @@ export function DashboardHeader({ totalAgents, activeAgents, onCreateAgent, onSe
                 transition={{ delay: 0.4, duration: 0.5 }}
               >
                 <Button 
-                  variant="neural" 
+                  variant="default" 
                   size="lg" 
                   onClick={onCreateAgent}
                   className="glow-primary"

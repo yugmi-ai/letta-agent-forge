@@ -190,7 +190,7 @@ export function AgentCreationModal({ isOpen, onClose, onCreateAgent, isLoading }
           <Card>
             <CardHeader className="flex flex-row items-center justify-between">
               <CardTitle className="text-lg">Memory Blocks</CardTitle>
-              <Button size="sm" variant="neural" onClick={addMemoryBlock}>
+              <Button size="sm" variant="default" onClick={addMemoryBlock}>
                 <Plus className="h-4 w-4" />
                 Add Block
               </Button>
@@ -285,8 +285,8 @@ export function AgentCreationModal({ isOpen, onClose, onCreateAgent, isLoading }
             <Button variant="outline" onClick={() => { onClose(); reset(); }}>
               Cancel
             </Button>
-            <Button 
-              variant="neural" 
+            <Button
+              variant="default" 
               onClick={handleSubmit}
               disabled={!name.trim() || isLoading}
             >

@@ -71,7 +71,7 @@ export function AgentCard({ agent, onChat, onSettings }: AgentCardProps) {
           <div className="flex gap-2">
             <Button 
               size="sm" 
-              variant="neural" 
+              variant="default" 
               onClick={() => onChat(agent.id)}
               className="flex-1"
             >

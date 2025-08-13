@@ -3,6 +3,9 @@ import { LettaClient } from '@letta-ai/letta-client';
 import { DashboardHeader } from './dashboard-header';
 import { AgentCard } from './agent-card';
 import { AgentCreationModal } from './agent-creation-modal';
+import { PromptBasedAgentModal } from './prompt-based-agent-modal';
+import { ToolCreationModal } from './tool-creation-modal';
+import { RuleCreationModal } from './rule-creation-modal';
 import { ChatInterface } from './chat-interface';
 import { MemoryBlockComponent } from './memory-block';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -121,6 +124,9 @@ export function LettaDashboard() {
   const [messages, setMessages] = useState(mockMessages);
   const [selectedAgent, setSelectedAgent] = useState<string | null>(null);
   const [showCreateModal, setShowCreateModal] = useState(false);
+  const [showPromptModal, setShowPromptModal] = useState(false);
+  const [showToolModal, setShowToolModal] = useState(false);
+  const [showRuleModal, setShowRuleModal] = useState(false);
   const [isCreatingAgent, setIsCreatingAgent] = useState(false);
   const [isSendingMessage, setIsSendingMessage] = useState(false);
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -314,7 +320,7 @@ export function LettaDashboard() {
         <TabsContent value="agents" className="space-y-6">
           <div className="flex justify-between items-center">
             <h2 className="text-2xl font-bold">Agent Management</h2>
-            <Button variant="neural" onClick={() => setShowCreateModal(true)}>
+            <Button variant="default" onClick={() => setShowCreateModal(true)}>
               <Plus className="h-4 w-4" />
               Create Agent
             </Button>
@@ -385,6 +391,28 @@ export function LettaDashboard() {
         onClose={() => setShowCreateModal(false)}
         onCreateAgent={handleCreateAgent}
         isLoading={isCreatingAgent}
+      />
+
+      <PromptBasedAgentModal
+        isOpen={showPromptModal}
+        onClose={() => setShowPromptModal(false)}
+        onCreateAgent={handleCreateAgent}
+        isLoading={isCreatingAgent}
+      />
+
+      <ToolCreationModal
+        isOpen={showToolModal}
+        onClose={() => setShowToolModal(false)}
+        onCreateTool={() => {}}
+        isLoading={false}
+      />
+
+      <RuleCreationModal
+        isOpen={showRuleModal}
+        onClose={() => setShowRuleModal(false)}
+        onCreateRule={() => {}}
+        availableTools={['web_search', 'run_code']}
+        isLoading={false}
       />
     </div>
   );
