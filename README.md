@@ -1,73 +1,154 @@
-# Welcome to your Lovable project
+# Yugmi Dashboard - AI Agent Management Platform
 
-## Project info
+## Overview
+Yugmi is a production-ready dashboard for managing and interacting with Letta AI agents. Built for both individual users and organizations, it provides comprehensive agent lifecycle management, real-time communication, and enterprise-grade security.
 
-**URL**: https://lovable.dev/projects/7a2aff34-60c6-4121-bdc0-b446a4c80e39
+## Features
 
-## How can I edit this code?
+### 🔐 Authentication & Authorization
+- Individual and Organization sign-up/login
+- Role-based access control (Admin, Manager, User)
+- JWT-based authentication
+- Multi-tenant organization support
 
-There are several ways of editing your application.
+### 🤖 Agent Management
+- Create, configure, and deploy Letta agents
+- Real-time agent monitoring and analytics
+- Memory block visualization and editing
+- Tool integration and custom tool creation
 
-**Use Lovable**
+### 💬 Communication
+- Real-time chat with agents
+- Message history and context preservation
+- Multi-agent conversations
+- Export conversation logs
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/7a2aff34-60c6-4121-bdc0-b446a4c80e39) and start prompting.
+### 🏢 Organization Features
+- Team management and user roles
+- Shared agent libraries
+- Usage analytics and billing
+- Audit logs and compliance
 
-Changes made via Lovable will be committed automatically to this repo.
+### 🔧 Integration
+- Docker-based Letta server connection
+- RESTful API integration
+- WebSocket real-time updates
+- Custom tool marketplace
 
-**Use your preferred IDE**
+## User Stories
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Individual Users
+- **As an individual user**, I want to sign up and create my personal AI agents
+- **As a developer**, I want to integrate custom tools with my agents
+- **As a researcher**, I want to export conversation data for analysis
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### Organizations
+- **As an organization admin**, I want to manage team members and their access levels
+- **As a team lead**, I want to create shared agents for my team
+- **As a compliance officer**, I want to audit all agent interactions
 
-Follow these steps:
+## Architecture
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+```
+Frontend (React/TypeScript) ↔ Backend API ↔ Letta Server (Docker)
+                              ↕
+                          Database (PostgreSQL)
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Prerequisites
+- Node.js 18+
+- Docker & Docker Compose
+- PostgreSQL (for production)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Development Setup
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd yugmi-dashboard
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Set up environment variables
+```bash
+cp .env.example .env
+# Edit .env with your configuration
+```
+
+4. Start Letta server (Docker)
+```bash
+docker-compose up letta-server
+```
+
+5. Start development server
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Letta Server Integration
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Docker Configuration
+The Letta server runs in a Docker container with the following setup:
 
-**Use GitHub Codespaces**
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  letta-server:
+    image: letta/letta:latest
+    ports:
+      - "8283:8283"
+    environment:
+      - LETTA_SERVER_HOST=0.0.0.0
+      - LETTA_SERVER_PORT=8283
+    volumes:
+      - letta_data:/app/data
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### API Integration
+- **Base URL**: `http://localhost:8283`
+- **Authentication**: Bearer token
+- **WebSocket**: `ws://localhost:8283/ws`
 
-## What technologies are used for this project?
+## Environment Variables
 
-This project is built with:
+```env
+# Frontend
+VITE_API_URL=http://localhost:3001
+VITE_LETTA_SERVER_URL=http://localhost:8283
+VITE_WS_URL=ws://localhost:8283/ws
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+# Backend (if separate)
+DATABASE_URL=postgresql://user:password@localhost:5432/yugmi
+JWT_SECRET=your-jwt-secret
+LETTA_SERVER_URL=http://localhost:8283
+```
 
-## How can I deploy this project?
+## Deployment
 
-Simply open [Lovable](https://lovable.dev/projects/7a2aff34-60c6-4121-bdc0-b446a4c80e39) and click on Share -> Publish.
+### Production Deployment
+1. Build the application
+```bash
+npm run build
+```
 
-## Can I connect a custom domain to my Lovable project?
+2. Deploy to your preferred platform (Vercel, Netlify, AWS, etc.)
 
-Yes, you can!
+3. Configure environment variables for production
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Docker Deployment
+```bash
+docker-compose up -d
+```
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## Contributing
+Please read our contributing guidelines and code of conduct.
+
+## License
+MIT License - see LICENSE file for details.
