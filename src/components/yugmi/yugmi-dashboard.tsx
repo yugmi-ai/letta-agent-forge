@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { DashboardHeader } from './dashboard-header';
-import { AgentCard } from './agent-card';
-import { AgentCreationModal } from './agent-creation-modal';
-import { ChatInterface } from './chat-interface';
-import { MemoryBlockComponent } from './memory-block';
-import { UserStoryModal } from './user-story-modal';
+import { DashboardHeader } from '../letta/dashboard-header';
+import { AgentCard } from '../letta/agent-card';
+import { AgentCreationModal } from '../letta/agent-creation-modal';
+import { ChatInterface } from '../letta/chat-interface';
+import { MemoryBlockComponent } from '../letta/memory-block';
+import { UserStoryModal } from '../letta/user-story-modal';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
